@@ -24,3 +24,4 @@ def save_dataframe(df, sl):
             sl.config(text=f"Saved as {file_path}")
         except Exception as e:
             sl.config(text=f"Error: {str(e)}")
+            
