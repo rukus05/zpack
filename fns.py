@@ -25,3 +25,15 @@ def save_dataframe(df, sl):
         except Exception as e:
             sl.config(text=f"Error: {str(e)}")
             
+
+def save_dataframe_csv(df, sl):
+    file_path = fd.asksaveasfilename(defaultextension=".csv", filetypes=[("CSV files", "*.csv"), ("All files", "*.*")])
+    
+    if file_path:
+        try:
+            # Assuming df is your DataFrame
+            df.to_csv(file_path, index=False)
+            sl.config(text=f"Saved as {file_path}")
+        except Exception as e:
+            sl.config(text=f"Error: {str(e)}")
+            
